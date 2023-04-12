@@ -1,0 +1,59 @@
+{%extends 'base.html'%}
+
+{%block title%}Contact Us{%endblock title%}
+{%block body%}
+<div class="container">
+    <div>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <button class="btn" style="width:100%"><i class="fa fa-download"></i> Download Resume</button>
+    </div>
+
+    <center><img src="/static/img/contact/1.jpg" width="400" height="500" alt="">
+
+    </center>
+    <div class="carousel-caption d-none d-md-block">
+        <h5>Meet the owner</h5>
+        <h5>Gaurav Sharma</h5>
+        <p>Software developer & food lover...</p>
+    </div>
+    <div>
+        <h3 class="text-black-50 text-center">Contact directly</h3>
+        <h3 class="text-black-50 text-center">Phone number : +91-9999362197</h3>
+        <h3 class="text-black-50 text-center">Email : Gouravs229@gmail.com</h3>
+        <h3 class="text-black-50 text-center"> or we'll conact you</h3>
+    </div>
+</div>
+
+<div class="container mb-3 py-4">
+    <form method = "post" action ="/contactus">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="Text" class="form-control" id="name" name="name" placeholder="Enter your name">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" name = "email" placeholder="name@example.com">
+        </div>
+        <div class="form-group">
+            <label for="code">Country Code</label>
+            <select class="form-control" id="code" name = "code">
+                <option>+91(IND)</option>
+                <option>+1(US/CA)</option>
+                <option>+44(UK)</option>
+               
+            </select>
+
+            <label for="phone">conact number</label>
+            <input type="Text" class="form-control" id="phone" name="phone" placeholder="Enter your conact number">
+        </div>
+       
+        <div class="form-group">
+            <label for="desc">Please Write down your query here....</label>
+            <textarea class="form-control" id="desc" name = "desc" rows="3" ></textarea>
+        </div>
+        <button class = "btn btn-primary" type="submit">Submit</button>
+    </form>
+    
+</div>
+
+{%endblock body%}
